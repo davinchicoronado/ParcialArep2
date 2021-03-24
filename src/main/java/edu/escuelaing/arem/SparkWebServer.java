@@ -26,7 +26,7 @@ public class SparkWebServer {
     }
     private static String inputDataPage(Request req, Response res) {
         
-        Double num = Double.parseDouble(req.queryParams("number"));
+        Double num = Double.parseDouble(req.queryParams("value"));
         APICalculator calculadora = new APICalculator();
         
         res.type("application/json");
@@ -50,7 +50,7 @@ public class SparkWebServer {
         
        String pageContent=
                 "{"+
-                   " \"operation\": \"cos\","+
+                   " \"operation\": \"log\","+
                 "\"input\":"+ num +
                  " \"output\":" +calculadora.calculateLog(num) +
                 "}";
